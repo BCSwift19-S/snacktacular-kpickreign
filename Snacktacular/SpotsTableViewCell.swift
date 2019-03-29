@@ -15,3 +15,11 @@ class SpotsTableViewCell: UITableViewCell {
     @IBOutlet weak var ratingLabel: UILabel!
 
 }
+
+
+
+
+
+
+
+
