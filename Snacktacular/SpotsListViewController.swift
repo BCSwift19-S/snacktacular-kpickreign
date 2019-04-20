@@ -14,6 +14,7 @@ import GoogleSignIn
 
 class SpotsListViewController: UIViewController {
     
+    @IBOutlet weak var sortSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     var spots: Spots!
     var authUI: FUIAuth!
@@ -66,6 +67,21 @@ class SpotsListViewController: UIViewController {
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
             }
         }
+    }
+    
+    func sortBasedOnSegmentPressed() {
+        switch sortSegmentedControl.selectedSegmentIndex{
+        case 0: //atoz
+            spots.spotArray.sorted(by: {$0.name < $1.name})
+        case 1: //closest
+        case 2: //avg rating
+        default:
+            print("ERROR: Hey you should have gotten here, our segmented control should just have three segments")
+        }
+    }
+    
+    @IBAction func sortSegmentPressed(_ sender: UISegmentedControl) {
+        sortBasedOnSegmentPressed()
     }
     
     @IBAction func signOutPressed(_ sender: UIBarButtonItem) {

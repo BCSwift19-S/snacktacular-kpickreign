@@ -83,7 +83,7 @@ class SpotDetailViewController: UIViewController {
             if success {
                 self.leaveViewController()
             } else {
-                print("ERROR: could not leave view controller because data wa not aved")
+                print("ERROR: could not leave view controller because data wa not saved")
             }
             
         }
