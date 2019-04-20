@@ -17,6 +17,7 @@
 		3E8390E7206597F600512DEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E8390E6206597F600512DEA /* Assets.xcassets */; };
 		3E8390EA206597F600512DEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E8390E8206597F600512DEA /* LaunchScreen.storyboard */; };
 		8819CC14AA9E1FE15F16EF08 /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 901890857C8D9C30C9467AC8 /* Pods_Snacktacular.framework */; };
+		E80F90F5226BD4A500E4D450 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F90F4226BD4A500E4D450 /* Double+roundTo.swift */; };
 		E8DACAED224EC5360073440F /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DACAEC224EC5360073440F /* Spot.swift */; };
 		E8DACAEF224EC67A0073440F /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DACAEE224EC67A0073440F /* Spots.swift */; };
 		E8DACAF1224FD9570073440F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8DACAF0224FD9570073440F /* GoogleService-Info.plist */; };
@@ -37,6 +38,7 @@
 		8440AF6A9C74D330332627D3 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
 		901890857C8D9C30C9467AC8 /* Pods_Snacktacular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snacktacular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6DA1E93441CD296B4F594DF /* Pods-Snacktacular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.debug.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.debug.xcconfig"; sourceTree = "<group>"; };
+		E80F90F4226BD4A500E4D450 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
 		E8DACAEC224EC5360073440F /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		E8DACAEE224EC67A0073440F /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		E8DACAF0224FD9570073440F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -92,6 +94,7 @@
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
 				3E0F960D2065AB6400AE450D /* SpotReviewsTableViewCell.swift */,
 				3E0F960F2065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift */,
+				E80F90F4226BD4A500E4D450 /* Double+roundTo.swift */,
 				3E8390E3206597F600512DEA /* Main.storyboard */,
 				3E8390E6206597F600512DEA /* Assets.xcassets */,
 				3E8390E8206597F600512DEA /* LaunchScreen.storyboard */,
@@ -312,6 +315,7 @@
 				E8DACAED224EC5360073440F /* Spot.swift in Sources */,
 				3E8390E0206597F600512DEA /* AppDelegate.swift in Sources */,
 				E8DACAEF224EC67A0073440F /* Spots.swift in Sources */,
+				E80F90F5226BD4A500E4D450 /* Double+roundTo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
