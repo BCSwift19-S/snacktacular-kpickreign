@@ -100,6 +100,7 @@ class Spot: NSObject, MKAnnotation {
                     completed(false)
                 } else {
                     print("New doument created with ref id \(ref?.documentID ?? "unknown")")
+                    self.documentID = ref!.documentID
                     completed(true)
                 }
             }
