@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 
+
 class Review {
     var title: String
     var text: String
@@ -28,6 +29,15 @@ class Review {
         self.reviewerUserID = reviewerUserID
         self.date = date
         self.documentID = documentID
+    }
+    
+    convenience init(dictionary: [String: Any]) {
+        let title = dictionary["title"] as! String? ?? ""
+        let text = dictionary["text"] as! String? ?? ""
+        let rating = dictionary["rating"] as! Int? ?? 0
+        let reviewerUserID = dictionary["reviewerUserID"] as! String
+        let date = dictionary["date"] as! Date? ?? Date()
+        self.init(title: title, text: text, rating: rating, reviewerUserID: reviewerUserID, date: date, documentID: "")
     }
     
     convenience init() {
