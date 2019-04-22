@@ -20,6 +20,7 @@
 		E80F90F5226BD4A500E4D450 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F90F4226BD4A500E4D450 /* Double+roundTo.swift */; };
 		E80F90F7226BD6A800E4D450 /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F90F6226BD6A800E4D450 /* UIView+addBorder.swift */; };
 		E80F90F9226C1CF300E4D450 /* ReviewTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F90F8226C1CF300E4D450 /* ReviewTableTableViewController.swift */; };
+		E80F90FB226D5CFD00E4D450 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F90FA226D5CFD00E4D450 /* Review.swift */; };
 		E8DACAED224EC5360073440F /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DACAEC224EC5360073440F /* Spot.swift */; };
 		E8DACAEF224EC67A0073440F /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DACAEE224EC67A0073440F /* Spots.swift */; };
 		E8DACAF1224FD9570073440F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8DACAF0224FD9570073440F /* GoogleService-Info.plist */; };
@@ -43,6 +44,7 @@
 		E80F90F4226BD4A500E4D450 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
 		E80F90F6226BD6A800E4D450 /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
 		E80F90F8226C1CF300E4D450 /* ReviewTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableTableViewController.swift; sourceTree = "<group>"; };
+		E80F90FA226D5CFD00E4D450 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		E8DACAEC224EC5360073440F /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		E8DACAEE224EC67A0073440F /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		E8DACAF0224FD9570073440F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -93,6 +95,7 @@
 				3E8390DF206597F600512DEA /* AppDelegate.swift */,
 				E8DACAEE224EC67A0073440F /* Spots.swift */,
 				E8DACAEC224EC5360073440F /* Spot.swift */,
+				E80F90FA226D5CFD00E4D450 /* Review.swift */,
 				3E8390E1206597F600512DEA /* SpotsListViewController.swift */,
 				3E0F960920659D9000AE450D /* SpotsTableViewCell.swift */,
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
@@ -318,6 +321,7 @@
 				3E0F96102065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift in Sources */,
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,
+				E80F90FB226D5CFD00E4D450 /* Review.swift in Sources */,
 				E80F90F7226BD6A800E4D450 /* UIView+addBorder.swift in Sources */,
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
 				E8DACAED224EC5360073440F /* Spot.swift in Sources */,
