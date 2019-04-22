@@ -42,10 +42,19 @@ class Photo {
             print("ERROR could not convert")
             return completed(false)
         }
+        let uploadMetaData = StorageMetadata()
+        uploadMetaData.contentType = "image/jpeg"
         documentUUID = UUID().uuidString // generate unique id to use for photo images
         //create ref to upload images
         let storageRef = storage.reference().child(spot.documentID).child(self.documentUUID)
-        let uploadTask = storageRef.putData(photoData)
+        let uploadTask = storageRef.putData(photoData, metadata: uploadMetaData) {
+            metadata, error in
+            guard error == nil else {
+                print("ERROR during .putData")
+                return
+            }
+            print("upload worked, metadata is \(metadata)")
+        }
         
         uploadTask.observe(.success) { (snapshot) in
             // Create the dicitonary representing the data we want to save
