@@ -614,7 +614,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="s5j-On-cqE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posted: Dec 32 2019" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmv-gf-bIs">
@@ -680,12 +680,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="wzj-Wo-VyB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gox-QQ-cYP">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="gox-QQ-cYP">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="yNf-kk-uGE" id="3gK-ea-qnc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hRW-rF-IqU">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="hRW-rF-IqU">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="yNf-kk-uGE" id="iwV-PY-iP5"/>
                             </connections>
@@ -700,14 +700,14 @@
                         <outlet property="nameLabel" destination="HGb-1y-o50" id="f7i-MK-Akl"/>
                         <outlet property="postedByLabel" destination="yyy-ly-8jy" id="BuH-Yg-iNr"/>
                         <outlet property="reviewDateLabel" destination="Qmv-gf-bIs" id="r8s-js-OsD"/>
-                        <outlet property="reviewTitle" destination="I7d-1j-2K5" id="a9r-cV-MbS"/>
-                        <outlet property="reviewView" destination="5He-BF-1do" id="Qrw-de-cmy"/>
+                        <outlet property="reviewTextView" destination="5He-BF-1do" id="Qrw-de-cmy"/>
+                        <outlet property="reviewTitleField" destination="I7d-1j-2K5" id="a9r-cV-MbS"/>
                         <outlet property="saveBarButton" destination="hRW-rF-IqU" id="ptW-Fm-wDX"/>
-                        <outletCollection property="starButtonConnection" destination="vGa-YD-sk4" collectionClass="NSMutableArray" id="pHd-Gz-a2v"/>
-                        <outletCollection property="starButtonConnection" destination="9YM-Pv-mBo" collectionClass="NSMutableArray" id="fJY-Dg-k4n"/>
-                        <outletCollection property="starButtonConnection" destination="cln-Mi-HHd" collectionClass="NSMutableArray" id="N7B-Rb-cNv"/>
-                        <outletCollection property="starButtonConnection" destination="2Ig-dB-3PL" collectionClass="NSMutableArray" id="wYN-0d-MSf"/>
-                        <outletCollection property="starButtonConnection" destination="Wa4-ly-gjF" collectionClass="NSMutableArray" id="BmN-c6-i0s"/>
+                        <outletCollection property="starButtonCollection" destination="vGa-YD-sk4" collectionClass="NSMutableArray" id="pHd-Gz-a2v"/>
+                        <outletCollection property="starButtonCollection" destination="9YM-Pv-mBo" collectionClass="NSMutableArray" id="fJY-Dg-k4n"/>
+                        <outletCollection property="starButtonCollection" destination="cln-Mi-HHd" collectionClass="NSMutableArray" id="N7B-Rb-cNv"/>
+                        <outletCollection property="starButtonCollection" destination="2Ig-dB-3PL" collectionClass="NSMutableArray" id="wYN-0d-MSf"/>
+                        <outletCollection property="starButtonCollection" destination="Wa4-ly-gjF" collectionClass="NSMutableArray" id="BmN-c6-i0s"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTM-fk-nvz" userLabel="First Responder" sceneMemberID="firstResponder"/>

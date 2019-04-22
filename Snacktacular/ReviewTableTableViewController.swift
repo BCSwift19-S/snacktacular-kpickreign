@@ -7,27 +7,29 @@
 //
 
 import UIKit
+import Firebase
 
 class ReviewTableTableViewController: UITableViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var reviewTitle: UITextField!
-    @IBOutlet weak var reviewView: UITextView!
+    @IBOutlet weak var reviewTitleField: UITextField!
+    @IBOutlet weak var reviewTextView: UITextView!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var postedByLabel: UILabel!
     @IBOutlet weak var buttonsBackgroundView: UIView!
     @IBOutlet weak var reviewDateLabel: UILabel!
-    @IBOutlet var starButtonConnection: [UIButton]!
+    @IBOutlet var starButtonCollection: [UIButton]!
     
     var spot: Spot!
     var review: Review!
+    let dateFormatter = DateFormatter()
     
     var rating = 0 {
         didSet {
-            for starButton in starButtonConnection {
+            for starButton in starButtonCollection {
                 let image = UIImage(named: (starButton.tag < rating ? "star-filled": "star-empty"))
                 starButton.setImage(image, for: .normal)
                 
@@ -52,7 +54,71 @@ class ReviewTableTableViewController: UITableViewController {
         if review == nil {
             review = Review()
         }
+        updateUserInterface()
 
+    }
+    
+    func updateUserInterface() {
+        nameLabel.text = spot.name
+        addressLabel.text = spot.address
+        rating = review.rating
+        reviewTitleField.text = review.title
+        enableDisableSaveButton()
+        reviewTextView.text = review.text
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        reviewDateLabel.text = "posted: \(dateFormatter.string(from: review.date))"
+        if review.documentID == "" { // This is a new review
+            addBordersToEditableObjects()
+        } else {
+            if review.reviewerUserID == Auth.auth().currentUser?.email { // This review was posted by current user
+                self.navigationItem.leftItemsSupplementBackButton = false
+                saveBarButton.title = "Update"
+                addBordersToEditableObjects()
+                deleteButton.isHidden = false
+            } else {
+                cancelBarButton.title = ""
+                saveBarButton.title = ""
+                postedByLabel.text = "Posted by: \(review.reviewerUserID)"
+                // disable stars
+                for starButton in starButtonCollection {
+                    starButton.backgroundColor = UIColor.white
+                    starButton.adjustsImageWhenDisabled = false
+                    starButton.isEnabled = false
+                    reviewTitleField.isEnabled = false
+                    reviewTextView.isEditable = false
+                    reviewTitleField.backgroundColor = UIColor.white
+                    reviewTextView.backgroundColor = UIColor.white
+                }
+            }
+        }
+    }
+    
+    func addBordersToEditableObjects() {
+        reviewTitleField.addBorder(width: 0.5, radius: 5.0, color: .black)
+        reviewTextView.addBorder(width: 0.5, radius: 5.0, color: .black)
+        buttonsBackgroundView.addBorder(width: 0.5, radius: 5.0, color: .black)
+    }
+    
+    func enableDisableSaveButton() {
+        if reviewTitleField.text != "" {
+            saveBarButton.isEnabled = true
+        } else {
+            saveBarButton.isEnabled = false
+        }
+    }
+    
+    func saveThenSegue() {
+        review.title = reviewTitleField.text!
+        review.text = reviewTextView.text!
+        review.saveData(spot: spot) { (success) in
+            if success {
+                self.leaveViewController()
+            } else {
+                print("ERROR: could not leave view controller because data was not saved")
+                
+            }
+        }
     }
     
     func leaveViewController() {
@@ -69,28 +135,22 @@ class ReviewTableTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        review.title = reviewTitle.text!
-        review.text = reviewView.text!
-        review.saveData(spot: spot) { (success) in
-            if success {
-                self.leaveViewController()
-            } else {
-                print("ERROR: could not leave view controller because data wa not saved")
-
-            }
-        }
-        
-
+        saveThenSegue()
     }
+    
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         leaveViewController()
-        
     }
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
     }
+    
     @IBAction func reviewTitleChanged(_ sender: UITextField) {
+        enableDisableSaveButton()
     }
+    
     @IBAction func returnTitleDonePressed(_ sender: UITextField) {
+        saveThenSegue()
     }
     
 
