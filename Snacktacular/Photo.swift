@@ -14,24 +14,31 @@ class Photo {
     var description: String
     var postedBy: String
     var date: Date
-    var documentID: String
+//    var documentID: String
     var documentUUID: String
     var dictionary: [String: Any] {
         return ["description": description, "postedBy": postedBy, "date": date]
     }
     
-    init(image: UIImage, description: String, postedBy: String, date: Date, documentID: String, documentUUID: String) {
+    init(image: UIImage, description: String, postedBy: String, date: Date, documentUUID: String) {
         self.image = image
         self.description = description
         self.postedBy = postedBy
         self.date = date
-        self.documentID = documentID
+        
         self.documentUUID = documentUUID
     }
     
     convenience init() {
         let postedBy = Auth.auth().currentUser?.email ?? "unknown user"
-        self.init(image: UIImage(), description: "", postedBy: postedBy, date: Date(), documentID: "", documentUUID: "")
+        self.init(image: UIImage(), description: "", postedBy: postedBy, date: Date(), documentUUID: "")
+    }
+    
+    convenience init(dictionary: [String: Any]) {
+        let description = dictionary["description"] as! String? ?? ""
+        let postedBy = dictionary["postedBy"] as! String? ?? ""
+        let date = dictionary["date"] as! Date? ?? Date()
+        self.init(image: UIImage(), description: description, postedBy: postedBy, date: date, documentUUID: "")
     }
     
     func saveData(spot: Spot, completed: @escaping (Bool) -> ()) {
@@ -74,8 +81,8 @@ class Photo {
         
         
         uploadTask.observe(.failure) { (snapshot) in
-            if let erroe = snapshot.error {
-                print("ERROR: upload task for file \(self.documentUUID) failed in spot \(spot.documentID)")
+            if let error = snapshot.error {
+                print("ERROR: upload task for file \(self.documentUUID) failed in spot \(spot.documentID) error \(error)")
             }
             return completed(false)
         }
